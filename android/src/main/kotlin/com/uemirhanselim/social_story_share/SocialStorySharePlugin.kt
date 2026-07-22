@@ -99,6 +99,9 @@ class SocialStorySharePlugin :
             when {
                 backgroundImage != null -> intent.setDataAndType(backgroundImage, "image/*")
                 backgroundVideo != null -> intent.setDataAndType(backgroundVideo, "video/*")
+                // Sticker-only / gradient story: no background asset, but the
+                // intent still needs a type or the story activity won't match.
+                else -> intent.type = "image/*"
             }
             sticker?.let { intent.putExtra("interactive_asset_uri", it) }
             call.argument<String>("backgroundTopColor")?.let { intent.putExtra("top_background_color", it) }
@@ -259,10 +262,19 @@ class SocialStorySharePlugin :
     /** Wraps a file path into a shareable content:// uri, or null if absent/missing. */
     private fun fileUri(path: String?): Uri? {
         if (path.isNullOrEmpty()) return null
-        val file = File(path)
-        if (!file.exists()) return null
+        val source = File(path)
+        if (!source.exists()) return null
+        // Copy the file into our own cache directory before handing it to the
+        // FileProvider. The caller's path may live anywhere (temp, code_cache,
+        // getFilesDir, …); copying guarantees it sits under a configured root,
+        // avoiding "Failed to find configured root that contains …".
+        val shareDir = File(context.cacheDir, "social_story_share").apply { mkdirs() }
+        val target = File(shareDir, source.name)
+        if (source.canonicalPath != target.canonicalPath) {
+            source.copyTo(target, overwrite = true)
+        }
         val authority = "${context.packageName}.social_story_share.fileprovider"
-        return FileProvider.getUriForFile(context, authority, file)
+        return FileProvider.getUriForFile(context, authority, target)
     }
 
     private fun launch(intent: Intent) {
