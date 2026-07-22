@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- path_provider's getTemporaryDirectory() lives under the cache dir. -->
+    <cache-path name="sss_cache" path="." />
+    <files-path name="sss_files" path="." />
+    <external-cache-path name="sss_ext_cache" path="." />
+    <external-files-path name="sss_ext_files" path="." />
+</paths>

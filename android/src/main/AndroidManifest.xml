@@ -1,0 +1,42 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Package visibility (Android 11+) so we can resolve and open the apps. -->
+    <queries>
+        <package android:name="com.instagram.android" />
+        <package android:name="com.facebook.katana" />
+        <package android:name="com.whatsapp" />
+        <package android:name="org.telegram.messenger" />
+        <package android:name="com.twitter.android" />
+        <intent>
+            <action android:name="com.instagram.share.ADD_TO_STORY" />
+        </intent>
+        <intent>
+            <action android:name="com.facebook.stories.ADD_TO_STORY" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="text/plain" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="smsto" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+    <application>
+        <!-- Shares the story files to Instagram/Facebook via a content:// uri. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.social_story_share.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/social_story_share_file_paths" />
+        </provider>
+    </application>
+</manifest>
