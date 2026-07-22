@@ -12,6 +12,12 @@ using native APIs on iOS and Android.
   <img alt="platforms" src="https://img.shields.io/badge/platforms-iOS%20%7C%20Android-lightgrey?style=flat-square">
 </p>
 
+<p align="center">
+  <a href="https://www.buymeacoffee.com/uemirhanselim">
+    <img alt="Buy Me A Coffee" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="40">
+  </a>
+</p>
+
 Sharing to Instagram/Facebook Stories on iOS normally relies on a CocoaPods plugin.
 This package implements it as a Swift Package instead, so it keeps working on Flutter
 projects that have migrated to Swift Package Manager without bringing CocoaPods back.
@@ -179,6 +185,14 @@ schemes are opened; the other targets use their URL schemes and the system sheet
 `UIActivityViewController`. On Android, Stories use the `com.instagram.share.ADD_TO_STORY`
 and `com.facebook.stories.ADD_TO_STORY` intents with assets exposed through the bundled
 `FileProvider`; the other targets use `ACTION_SEND`, `ACTION_SENDTO` and `ACTION_VIEW`.
+
+## Support
+
+If this package saved you some time, you can support its development:
+
+<a href="https://www.buymeacoffee.com/uemirhanselim">
+  <img alt="Buy Me A Coffee" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="40">
+</a>
 
 ## License
 

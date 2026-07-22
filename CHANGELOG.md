@@ -1,3 +1,7 @@
+## 0.2.1
+
+* Documentation: added a support link to the README.
+
 ## 0.2.0
 
 * Added direct text/link sharing: `shareToWhatsApp`, `shareToTelegram`,
