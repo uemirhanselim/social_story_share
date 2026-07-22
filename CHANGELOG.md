@@ -1,3 +1,7 @@
+## 0.2.2
+
+* Documentation: switched the support link to GitHub Sponsors.
+
 ## 0.2.1
 
 * Documentation: added a support link to the README.

@@ -1,6 +1,6 @@
 name: social_story_share
 description: "Native sharing to Instagram & Facebook Stories, WhatsApp, Telegram, X and SMS. Swift Package Manager ready, no CocoaPods required."
-version: 0.2.1
+version: 0.2.2
 homepage: https://github.com/uemirhanselim/social_story_share
 repository: https://github.com/uemirhanselim/social_story_share
 issue_tracker: https://github.com/uemirhanselim/social_story_share/issues

@@ -10,12 +10,7 @@ using native APIs on iOS and Android.
   <a href="https://pub.dev/packages/social_story_share/score"><img alt="likes" src="https://img.shields.io/pub/likes/social_story_share?style=flat-square"></a>
   <a href="https://pub.dev/packages/social_story_share/score"><img alt="points" src="https://img.shields.io/pub/points/social_story_share?style=flat-square"></a>
   <img alt="platforms" src="https://img.shields.io/badge/platforms-iOS%20%7C%20Android-lightgrey?style=flat-square">
-</p>
-
-<p align="center">
-  <a href="https://www.buymeacoffee.com/uemirhanselim">
-    <img alt="Buy Me A Coffee" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="40">
-  </a>
+  <a href="https://github.com/sponsors/uemirhanselim"><img alt="sponsor" src="https://img.shields.io/badge/sponsor-%E2%9D%A4-ea4aaa?style=flat-square&logo=githubsponsors&logoColor=white"></a>
 </p>
 
 Sharing to Instagram/Facebook Stories on iOS normally relies on a CocoaPods plugin.
@@ -185,14 +180,6 @@ schemes are opened; the other targets use their URL schemes and the system sheet
 `UIActivityViewController`. On Android, Stories use the `com.instagram.share.ADD_TO_STORY`
 and `com.facebook.stories.ADD_TO_STORY` intents with assets exposed through the bundled
 `FileProvider`; the other targets use `ACTION_SEND`, `ACTION_SENDTO` and `ACTION_VIEW`.
-
-## Support
-
-If this package saved you some time, you can support its development:
-
-<a href="https://www.buymeacoffee.com/uemirhanselim">
-  <img alt="Buy Me A Coffee" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="40">
-</a>
 
 ## License
 
